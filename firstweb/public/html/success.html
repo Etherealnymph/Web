@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>登录成功</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/mystyle.css">
+  <script src="/js/firework.js"></script>
+</head>
+<body>
+
+<script>
+  console.log("========= 登录成功 =========");
+</script>
+
+<div class="container" style="text-align:center;">
+  <h1 style="color:#2ecc71;">你好！</h1>
+  <h1 style="color:#2ecc71;">登录成功！</h1>
+  <!-- <p style="margin-top:12px;color:#555;">将在 <span id="count-success">3</span> 秒后跳转到主页...</p> -->
+  <p onclick="showAlert()" style="color:#c62e96;text-decoration:none;">送个烟花给自己吧</p>
+
+  <p style="margin-top:16px;">
+    <a href="/html/video.html" style="display:inline-block;padding:10px 16px;background:#3498db;color:#fff;border-radius:6px;text-decoration:none;margin-right:12px;">欣赏视频</a>
+    <a href="/html/music.html" style="display:inline-block;padding:10px 16px;background:#2ecc71;color:#fff;border-radius:6px;text-decoration:none;">欣赏音乐</a>
+  </p>
+  
+  <div style="margin-top:22px;">
+    <input id="searchInput" type="search" placeholder="视频或音乐搜索" style="padding:8px 10px;width:60%;max-width:320px;border:1px solid #ccc;border-radius:4px;" />
+    <button id="searchBtn" style="padding:8px 12px;margin-left:8px;border-radius:4px;background:#2980b9;color:#fff;border:none;">搜索</button>
+    <div id="searchMsg" style="margin-top:12px;color:#e74c3c;"></div>
+  </div>
+</div>
+
+  <script>
+  (function(){
+    // 前端动态搜索：向后端请求 /media/list，按文件名包含搜索关键字匹配（忽略大小写）
+    var mediaListCache = null;
+
+    function fetchMediaList() {
+      if (mediaListCache) return Promise.resolve(mediaListCache);
+      return fetch('/media/list').then(function(r){ return r.json(); }).then(function(j){ mediaListCache = j.files || []; return mediaListCache; }).catch(function(){ mediaListCache = []; return mediaListCache; });
+    }
+
+    function pickMatch(files, q) {
+      if (!q) return null;
+      var key = q.trim().toLowerCase();
+      // 先处理直接文件名输入
+      if (key.endsWith('.mp4')) return { type: 'video', file: q.trim() };
+      if (key.endsWith('.mp3')) return { type: 'music', file: q.trim() };
+
+      for (var i=0;i<files.length;i++){
+        var name = files[i] || '';
+        if (name.toLowerCase().indexOf(key) !== -1) {
+          var ext = name.split('.').pop().toLowerCase();
+          return { type: (ext === 'mp4' ? 'video' : (ext === 'mp3' ? 'music' : 'other')), file: name };
+        }
+      }
+      return null;
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', function(){
+      var q = document.getElementById('searchInput').value || '';
+      var msgEl = document.getElementById('searchMsg');
+      msgEl.style.color = '#999'; msgEl.textContent = '正在搜索...';
+      console.log('Search for:', q);
+      fetchMediaList().then(function(files){
+        var res = pickMatch(files, q);
+        console.log('Search result:', res);
+        if (res) {
+          if (res.type === 'other') { msgEl.style.color = '#e67e22'; msgEl.textContent = '找到文件，但不是支持的音视频格式'; return; }
+          msgEl.style.color = '#27ae60'; msgEl.textContent = '找到资源，正在打开...';
+          // 跳转到 search 页面并传入 resource 作为查询参数，方便展示与进一步操作
+          var url = '/html/search.html?q=' + encodeURIComponent(res.file);
+          setTimeout(function(){ window.location.href = url; }, 300);
+        } else {
+          msgEl.style.color = '#e74c3c'; msgEl.textContent = '没有此资源';
+        }
+      });
+    });
+
+    // 回车触发搜索
+    document.getElementById('searchInput').addEventListener('keydown', function(e){ if (e.key === 'Enter') document.getElementById('searchBtn').click(); });
+  })();
+</script>
+
+<!-- <script>
+  (function(){
+    var seconds = 3;
+    var el = document.getElementById('count-success');
+    var t = setInterval(function(){
+      seconds--;
+      if (seconds <= 0) { clearInterval(t); window.location.href = '/html/register.html'; }
+      else el.textContent = seconds;
+    }, 1000);
+  })();
+</script> -->
+
+</body>
+</html>

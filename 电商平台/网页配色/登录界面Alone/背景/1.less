@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+
+@prim: #53e3a6;
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+  font-weight: 300;
+}
+
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  font-weight: 300;
+  
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    font-family: 'Source Sans Pro', sans-serif;
+      color:    white;
+    font-weight: 300;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-family: 'Source Sans Pro', sans-serif;
+     color:    white;
+     opacity:  1;
+    font-weight: 300;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-family: 'Source Sans Pro', sans-serif;
+     color:    white;
+     opacity:  1;
+    font-weight: 300;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-family: 'Source Sans Pro', sans-serif;
+     color:    white;
+    font-weight: 300;
+  }
+}
+
+.wrapper{
+  background: #50a3a2;
+background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 使 wrapper 覆盖整个视口高度并居中内容 */
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  &.form-success{
+    .container{
+      h1{
+        transform: translateY(85px);
+      }
+    }
+  }
+}
+
+.container{
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+
+  h1{
+    font-size: 6vw; /* 响应式标题，最大受限 */
+    max-font-size: 56px;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    font-weight: 200;
+  }
+}
+
+form{
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+  
+    input{
+      display: block;
+      appearance: none;
+      outline: 0;
+      border: 1px solid fade(white, 40%);
+      background-color: fade(white, 20%);
+      width: min(400px, 80vw);
+
+      border-radius: 3px;
+      padding: 12px 18px;
+      margin: 0 auto 14px auto;
+      text-align: center;
+      font-size: 18px;
+
+      color: white;
+
+      transition-duration: 0.25s;
+      font-weight: 300;
+
+      &:hover{
+        background-color: fade(white, 40%);
+      }
+
+      &:focus{
+        background-color: white;
+        width: min(520px, 85vw);
+        color: @prim;
+      }
+    }
+  
+  button{
+    appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 12px 20px;
+    color: @prim;
+    border-radius: 3px;
+    width: min(420px, 70vw);
+    cursor: pointer;
+    font-size: 18px;
+    transition-duration: 0.25s;
+
+    &:hover{
+      background-color: rgb(245, 247, 249);
+    }
+  }
+}
+
+.bg-bubbles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 1;
+  
+    li{
+      position: absolute;
+      list-style: none;
+      display: block;
+      width: 48px;
+      height: 48px;
+      background-color: fade(white, 15%);
+      bottom: -200px;
+
+      -webkit-animation: square 25s infinite;
+      animation:         square 25s infinite;
+
+      -webkit-transition-timing-function: linear;
+      transition-timing-function: linear;
+
+      &:nth-child(1){ left: 8%; }
+      &:nth-child(2){ left: 18%; width: 120px; height: 120px; animation-delay: 2s; animation-duration: 18s; }
+      &:nth-child(3){ left: 26%; animation-delay: 4s; width: 60px; height: 60px; }
+      &:nth-child(4){ left: 38%; width: 80px; height: 80px; animation-duration: 22s; background-color: fade(white, 25%); }
+      &:nth-child(5){ left: 56%; width: 100px; height: 100px; }
+      &:nth-child(6){ left: 70%; width: 160px; height: 160px; animation-delay: 3s; background-color: fade(white, 20%); }
+      &:nth-child(7){ left: 84%; width: 140px; height: 140px; animation-delay: 7s; }
+      &:nth-child(8){ left: 48%; width: 24px; height: 24px; animation-delay: 15s; animation-duration: 40s; }
+      &:nth-child(9){ left: 32%; width: 14px; height: 14px; animation-delay: 2s; animation-duration: 40s; background-color: fade(white, 30%); }
+      &:nth-child(10){ left: 92%; width: 160px; height: 160px; animation-delay: 11s; }
+    }
+}
+
+@-webkit-keyframes square {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-700px) rotate(600deg); }
+}
+@keyframes square {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-700px) rotate(600deg); }
+}

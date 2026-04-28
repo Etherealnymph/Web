@@ -1,0 +1,8 @@
+nohup: ignoring input
+
+> thirdweb@1.0.0 start
+> node server.js
+
+可选 marked 插件未安装，若需启用 mangle/headerIds，请运行: npm install marked-mangle marked-gfm-heading-id
+✅ Server listening on http://0.0.0.0:12399
+✅ MongoDB 连接成功！

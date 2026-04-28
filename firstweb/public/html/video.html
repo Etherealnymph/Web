@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title id="title">鞠婧祎春晚歌舞《壁上观》</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/mystyle.css">
+  <script src="/js/firework.js"></script>
+  <style>
+    /* three.js 背景画布放在页面后面 */
+    #bgCanvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; } 
+    /* 提升表单容器到 canvas 之上，并稍微半透明以能看到背景 */
+    .container { position: relative; z-index: 1; background: rgba(0,0,0,0.6); }
+  </style>
+</head>
+<body>
+
+<div class="container" style="text-align:center;margin-top:18px;">
+  <h2 style="color:#333;">欣赏视频</h2>
+  <div style="max-width:720px;margin:0 auto;text-align:left;">
+    <p id="videoTitle"><strong>视频：</strong> 鞠婧祎春晚歌舞《壁上观》</p>
+    <video id="videoPlayer" controls style="width:100%;max-height:420px;background:#000;">
+      <source id="videoSource" src="/media/鞠婧祎春晚歌舞《壁上观》.mp4" type="video/mp4">
+      您的浏览器不支持视频播放。
+      <a id="videoDownload" href="/media/鞠婧祎春晚歌舞《壁上观》.mp4">点击下载视频</a>
+    </video>
+    <script>
+      (function(){
+        var params = new URLSearchParams(location.search);
+        var resource = params.get('resource');
+        var defaultFile = '鞠婧祎春晚歌舞《壁上观》.mp4';
+        var file = resource && resource.trim() ? resource.trim() : defaultFile;
+        try {
+          var src = '/media/' + encodeURIComponent(file);
+          document.getElementById('title').textContent = file;
+          document.getElementById('videoSource').src = src;
+          document.getElementById('videoDownload').href = src;
+          document.getElementById('videoTitle').innerHTML = '<strong>视频：</strong> ' + file;
+          var player = document.getElementById('videoPlayer');
+          player.load();
+        } catch (e) { /* ignore, keep defaults */ }
+      })();
+    </script>
+  </div>
+</div>
+<script src="/js/three-bg.js"></script>
+</body>
+</html>

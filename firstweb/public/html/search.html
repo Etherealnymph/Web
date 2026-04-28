@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>媒体搜索</title>
+  <link rel="stylesheet" href="/css/mystyle.css">
+  <style>
+    .search-box {max-width:720px;margin:18px auto}
+    .result-item{padding:8px;border-bottom:1px solid #eee}
+    .result-item a{margin-right:12px}
+    /* three.js 背景画布放在页面后面 */
+    #bgCanvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; } 
+    /* 提升表单容器到 canvas 之上，并稍微半透明以能看到背景 */
+    .container { position: relative; z-index: 1; background: rgba(0,0,0,0.6); }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+</head>
+<body>
+  <div class="container search-box">
+    <h2>媒体搜索与打开</h2>
+    <p>输入文件名前缀（或留空显示全部），点击“搜索”</p>
+    <div>
+      <input id="q" type="text" placeholder="输入文件名前缀" style="width:70%" />
+      <button id="search">搜索</button>
+    </div>
+    <div id="results" style="margin-top:12px"></div>
+  </div>
+  <script src="/js/three-bg.js"></script>
+  <script>
+    async function doSearch(){
+      const q = document.getElementById('q').value.trim()
+      const url = '/media/list' + (q ? ('?filter=' + encodeURIComponent(q)) : '')
+      const res = await fetch(url)
+      if (!res.ok) {
+        document.getElementById('results').innerHTML = '<div class="error">请求失败: ' + res.status + '</div>'
+        return
+      }
+      const data = await res.json()
+      const files = data.files || []
+      if (files.length === 0) {
+        document.getElementById('results').innerHTML = '<div>未找到匹配文件</div>'
+        return
+      }
+      const container = document.createElement('div')
+      files.forEach(f => {
+        const row = document.createElement('div')
+        row.className = 'result-item'
+        // 链接到播放页面并传递 resource 参数（已在 music.html 处理）
+        const linkPlay = document.createElement('a')
+        linkPlay.href = '/html/music.html?resource=' + encodeURIComponent(f)
+        linkPlay.textContent = '打开播放'
+        linkPlay.target = '_blank'
+        // 直接打开媒体文件（浏览器会尝试播放或下载）
+        const linkFile = document.createElement('a')
+        linkFile.href = '/media/' + encodeURIComponent(f)
+        linkFile.textContent = '直接打开媒体'
+        linkFile.target = '_blank'
+        const name = document.createElement('span')
+        name.textContent = f
+        row.appendChild(linkPlay)
+        row.appendChild(linkFile)
+        row.appendChild(name)
+        container.appendChild(row)
+      })
+      const results = document.getElementById('results')
+      results.innerHTML = ''
+      results.appendChild(container)
+    }
+    document.getElementById('search').addEventListener('click', doSearch)
+    document.getElementById('q').addEventListener('keydown', (e)=>{ if(e.key === 'Enter') doSearch() })
+    // 页面加载时若有 q 参数则预填并自动搜索，否则列出全部
+    window.addEventListener('load', () => {
+      var params = new URLSearchParams(location.search)
+      var q = params.get('q')
+      if (q) {
+        document.getElementById('q').value = q
+        doSearch()
+      } else {
+        doSearch()
+      }
+    })
+  </script>
+</body>
+</html>

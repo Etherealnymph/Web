@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title id = "title">鞠婧祎 - 恋爱告急</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/mystyle.css">
+  <script src="/js/firework.js"></script>
+</head>
+<body>
+    
+<div class="container" style="text-align:center;margin-top:18px;">
+  <h2 style="color:#333;">欣赏音乐</h2>
+    <p id="musicTitle" style="margin-top:12px;"><strong>音频：</strong> 鞠婧祎 - 恋爱告急</p>
+    <audio id="audioPlayer" controls style="width:100%;">
+      <source id="audioSource" src="/media/鞠婧祎 - 恋爱告急.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放。
+      <a id="audioDownload" href="/media/鞠婧祎 - 恋爱告急.mp3">点击下载音频</a>
+    </audio>
+    <script>
+      (function(){
+        var params = new URLSearchParams(location.search);
+        var resource = params.get('resource');
+        var defaultFile = '鞠婧祎 - 恋爱告急.mp3';
+        var file = resource && resource.trim() ? resource.trim() : defaultFile;
+        try {
+          var src = '/media/' + encodeURIComponent(file);
+          document.getElementById('title').textContent = file;
+          document.getElementById('audioSource').src = src;
+          document.getElementById('audioDownload').href = src;
+          document.getElementById('musicTitle').innerHTML = '<strong>音频：</strong> ' + file;
+          var player = document.getElementById('audioPlayer');
+          player.load();
+        } catch (e) { /* keep defaults */ }
+      })();
+    </script>
+  </div>
+</div>
+
+</body>
+</html>

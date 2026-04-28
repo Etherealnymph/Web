@@ -1,0 +1,5 @@
+2026-04-17 23:10:32 [info] 服务已启动: http://localhost:12399 
+2026-04-17 23:10:38 [info] ========= 用户已登录 ========= 
+2026-04-17 23:10:38 [info] ::1 - - [17/Apr/2026:15:10:38 +0000] "GET / HTTP/1.1" 302 48 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-17 23:10:38 [info] ::1 - - [17/Apr/2026:15:10:38 +0000] "GET /html/register.html HTTP/1.1" 200 6107 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-17 23:10:38 [info] ::1 - - [17/Apr/2026:15:10:38 +0000] "GET /css/mystyle.css HTTP/1.1" 304 - "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 

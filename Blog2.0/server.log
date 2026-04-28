@@ -1,0 +1,66 @@
+nohup: ignoring input
+
+> thirdweb@1.0.0 start
+> node server.js
+
+可选 marked 插件未安装，若需启用 mangle/headerIds，请运行: npm install marked-mangle marked-gfm-heading-id
+✅ Server listening on http://0.0.0.0:12399
+✅ MongoDB 连接成功！
+[2026-04-24T01:29:32.926Z] 127.0.0.1 GET /favorites
+[2026-04-24T01:29:33.025Z] 127.0.0.1 GET /settings
+[2026-04-24T01:29:39.416Z] 127.0.0.1 GET /favorites
+[2026-04-24T01:29:39.504Z] 127.0.0.1 GET /settings
+[2026-04-24T01:29:54.706Z] 127.0.0.1 GET /favorites
+[2026-04-24T01:29:54.790Z] 127.0.0.1 GET /settings
+[2026-04-24T01:31:22.844Z] 127.0.0.1 GET /?tab=blogs
+[2026-04-24T01:31:22.854Z] 127.0.0.1 GET /login
+[2026-04-24T01:31:22.878Z] 127.0.0.1 GET /captcha
+[CAPTCHA] 127.0.0.1 -> TRkbg
+[2026-04-24T01:31:38.619Z] 127.0.0.1 POST /login
+[2026-04-24T01:31:38.794Z] 127.0.0.1 GET /
+[2026-04-24T01:31:41.958Z] 127.0.0.1 GET /favorites
+[FAV] uid=69e7707e82271fab2b6d6676 favCount=1
+[FAV] found articles count=1
+[2026-04-24T01:31:46.796Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:31:53.949Z] 127.0.0.1 GET /user/69e7707e82271fab2b6d6676
+[2026-04-24T01:31:57.386Z] 127.0.0.1 GET /?tab=blogs
+[2026-04-24T01:32:19.042Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:32:26.562Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:32:26.660Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:04.980Z] 127.0.0.1 GET /?tab=blogs
+[2026-04-24T01:35:05.062Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:06.623Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:35:06.721Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:18.563Z] 127.0.0.1 POST /settings
+[2026-04-24T01:35:18.576Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:35:18.657Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:21.489Z] 127.0.0.1 GET /?tab=blogs
+[2026-04-24T01:35:21.591Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:23.491Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:35:23.600Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:32.455Z] 127.0.0.1 POST /settings
+[2026-04-24T01:35:32.465Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:35:32.525Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:35:37.474Z] 127.0.0.1 GET /favorites
+[FAV] uid=69e7707e82271fab2b6d6676 favCount=1
+[FAV] found articles count=1
+[2026-04-24T01:35:37.581Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:36:09.806Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:36:09.885Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:36:11.647Z] 127.0.0.1 GET /favorites
+[FAV] uid=69e7707e82271fab2b6d6676 favCount=1
+[FAV] found articles count=1
+[2026-04-24T01:36:11.745Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:36:15.353Z] 127.0.0.1 GET /settings
+[SET] uid=69e7707e82271fab2b6d6676 user=2025120901016
+[2026-04-24T01:36:15.444Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:36:20.353Z] 127.0.0.1 GET /?tab=blogs
+[2026-04-24T01:36:20.442Z] 127.0.0.1 GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-04-24T01:36:43.032Z] 127.0.0.1 GET /user/69e7707e82271fab2b6d6676

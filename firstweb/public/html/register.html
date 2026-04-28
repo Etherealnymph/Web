@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>登录</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/mystyle.css">
+    <style>
+        /* three.js 背景画布放在页面后面 */
+        #bgCanvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+        /* 提升表单容器到 canvas 之上，并稍微半透明以能看到背景 */
+        .container { position: relative; z-index: 1; background: rgba(0,0,0,0.6); }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+</head>
+<body>
+
+<script>
+    console.log("登录页面已加载");
+</script>
+<div class="container">
+        <h1>账户</h1>
+
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+            <form id="loginForm" action="/" method="POST" style="flex:1;min-width:260px;">
+                <h3>登录</h3>
+                <div style="margin-bottom:12px;">
+                        <label for="lnickname">昵称</label>
+                        <input required value="红笺" type="text" name="nickname" id="lnickname" style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px;">
+                </div>
+
+                <div style="margin-bottom:12px;">
+                        <label for="lstudentId">学号</label>
+                        <input required value="2025120901016" type="text" name="studentId" id="lstudentId" style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px;">
+                </div>
+
+                <div style="margin-bottom:12px;">
+                        <label for="lsecret">密码</label>
+                        <input name="secret" id="lsecret" placeholder="六位密码" style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px;" type="password">
+                </div>
+
+                <div style="text-align:center;margin-top:14px;">
+                        <a href="/html/search.html" style="margin-right:12px;color:#999;text-decoration:none;">浏览媒体</a>
+                        <button type="submit" style="background:#3498db;color:#fff;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">登录</button>
+                </div>
+            </form>
+
+            <form id="registerForm" style="flex:1;min-width:260px;">
+                <h3>注册</h3>
+                <div style="margin-bottom:12px;">
+                        <label for="nickname">昵称</label>
+                        <input required type="text" name="nickname" id="nickname" style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px;">
+                </div>
+
+                <div style="margin-bottom:12px;">
+                        <label for="studentId">学号</label>
+                        <input required type="text" name="studentId" id="studentId" style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px;">
+                </div>
+
+                <div style="margin-bottom:12px;">
+                        <label for="secret">密码</label>
+                        <input name="secret" id="secret" placeholder="至少6位" style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px;" type="password">
+                </div>
+
+                <div style="text-align:center;margin-top:14px;">
+                        <button id="registerBtn" type="button" style="background:#27ae60;color:#fff;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">注册</button>
+                </div>
+
+                <div id="regResult" style="margin-top:12px;color:#c0392b"></div>
+            </form>
+        </div>
+
+</div>
+
+<script src="/js/three-bg.js"></script>
+<script>
+    // 登录表单保持原有 POST 提交行为（服务器端已有处理）
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+        // 使用表单默认提交
+    })
+
+    // 注册逻辑：使用 fetch 调用 /register
+    document.getElementById('registerBtn').addEventListener('click', async function(){
+        const nickname = document.getElementById('nickname').value.trim()
+        const studentId = document.getElementById('studentId').value.trim()
+        const secret = document.getElementById('secret').value
+        const resultNode = document.getElementById('regResult')
+        resultNode.style.color = '#c0392b'
+        resultNode.textContent = ''
+
+        if (!nickname) return resultNode.textContent = '请输入昵称'
+        if (!/^[0-9]{6,20}$/.test(studentId)) return resultNode.textContent = '学号应为 6-20 位数字'
+        if (!secret || secret.length < 6) return resultNode.textContent = '密码至少 6 位'
+
+        try {
+            const form = new URLSearchParams()
+            form.append('nickname', nickname)
+            form.append('studentId', studentId)
+            form.append('secret', secret)
+
+            const res = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: form.toString()
+            })
+
+            if (res.status === 201) {
+                resultNode.style.color = '#27ae60'
+                resultNode.textContent = '注册成功，正在跳转...'
+                setTimeout(()=>{ location.href = '/html/success.html' }, 900)
+                return
+            }
+
+            const data = await res.json().catch(()=>({}))
+            if (res.status === 409) {
+                resultNode.textContent = data.error || '学号已被注册'
+            } else if (res.status === 400) {
+                resultNode.textContent = (data.errors && data.errors.map(e=>e.msg).join('; ')) || '请求参数有误'
+            } else {
+                resultNode.textContent = data.error || ('注册失败：' + res.status)
+            }
+        } catch (e) {
+            resultNode.textContent = '提交失败，请稍候重试'
+        }
+    })
+</script>
+
+</body>
+</html>

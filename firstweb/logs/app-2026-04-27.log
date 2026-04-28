@@ -1,0 +1,44 @@
+2026-04-27 08:51:46 [info] 服务已启动: http://localhost:12399 
+2026-04-27 08:52:38 [info] ========= 用户已登录 ========= 
+2026-04-27 08:52:38 [info] ::ffff:113.54.218.251 - - [27/Apr/2026:00:52:38 +0000] "GET / HTTP/1.1" 302 48 "-" "Mozilla/5.0 (Linux; U; Android 14; zh-cn; PFTM10 Build/UKQ1.230924.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/115.0.5790.168 Mobile Safari/537.36 HeyTapBrowser/40.10.14.1" 
+2026-04-27 08:52:39 [info] ::ffff:113.54.218.251 - - [27/Apr/2026:00:52:39 +0000] "GET /html/register.html HTTP/1.1" 200 6293 "-" "Mozilla/5.0 (Linux; U; Android 14; zh-cn; PFTM10 Build/UKQ1.230924.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/115.0.5790.168 Mobile Safari/537.36 HeyTapBrowser/40.10.14.1" 
+2026-04-27 08:52:39 [info] ::ffff:113.54.218.251 - - [27/Apr/2026:00:52:39 +0000] "GET /css/mystyle.css HTTP/1.1" 200 618 "http://113.54.222.214:12399/html/register.html" "Mozilla/5.0 (Linux; U; Android 14; zh-cn; PFTM10 Build/UKQ1.230924.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/115.0.5790.168 Mobile Safari/537.36 HeyTapBrowser/40.10.14.1" 
+2026-04-27 08:52:39 [info] ::ffff:113.54.218.251 - - [27/Apr/2026:00:52:39 +0000] "GET /js/three-bg.js HTTP/1.1" 200 3187 "http://113.54.222.214:12399/html/register.html" "Mozilla/5.0 (Linux; U; Android 14; zh-cn; PFTM10 Build/UKQ1.230924.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/115.0.5790.168 Mobile Safari/537.36 HeyTapBrowser/40.10.14.1" 
+2026-04-27 08:52:41 [info] ::ffff:113.54.218.251 - - [27/Apr/2026:00:52:41 +0000] "GET /favicon.ico HTTP/1.1" 200 15086 "http://113.54.222.214:12399/html/register.html" "Mozilla/5.0 (Linux; U; Android 14; zh-cn; PFTM10 Build/UKQ1.230924.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/115.0.5790.168 Mobile Safari/537.36 HeyTapBrowser/40.10.14.1" 
+2026-04-27 08:52:52 [info] ========= 用户已登录 ========= 
+2026-04-27 08:52:52 [info] ::1 - - [27/Apr/2026:00:52:52 +0000] "GET / HTTP/1.1" 302 48 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:52:52 [info] ::1 - - [27/Apr/2026:00:52:52 +0000] "GET /html/register.html HTTP/1.1" 200 6293 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:52:52 [info] ::1 - - [27/Apr/2026:00:52:52 +0000] "GET /css/mystyle.css HTTP/1.1" 304 - "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:52:52 [info] ::1 - - [27/Apr/2026:00:52:52 +0000] "GET /js/three-bg.js HTTP/1.1" 200 3187 "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:27 [info] ========= 用户已登录 ========= 
+2026-04-27 08:53:27 [info] ::ffff:113.54.222.214 - - [27/Apr/2026:00:53:27 +0000] "GET / HTTP/1.1" 302 48 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:27 [info] ::ffff:113.54.222.214 - - [27/Apr/2026:00:53:27 +0000] "GET /html/register.html HTTP/1.1" 200 6293 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:27 [info] ::ffff:113.54.222.214 - - [27/Apr/2026:00:53:27 +0000] "GET /js/three-bg.js HTTP/1.1" 200 3187 "http://113.54.222.214:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:27 [info] ::ffff:113.54.222.214 - - [27/Apr/2026:00:53:27 +0000] "GET /css/mystyle.css HTTP/1.1" 200 618 "http://113.54.222.214:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:29 [info] ::ffff:113.54.222.214 - - [27/Apr/2026:00:53:29 +0000] "GET /favicon.ico HTTP/1.1" 200 15086 "http://113.54.222.214:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:37 [info] ::1 - - [27/Apr/2026:00:53:37 +0000] "GET /css/mystyle.css HTTP/1.1" 304 - "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:37 [info] ::1 - - [27/Apr/2026:00:53:37 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:52 [info] ========= 接收表单数据 ========= 
+2026-04-27 08:53:52 [info] 昵称： 红笺 
+2026-04-27 08:53:52 [info] 学号： 2025120901016 
+2026-04-27 08:53:52 [info] 密码： *** 
+2026-04-27 08:53:52 [warn] 登录失败！ 
+2026-04-27 08:53:52 [info] ========= 进入/html/fail.html ========= 
+2026-04-27 08:53:52 [info] ::1 - - [27/Apr/2026:00:53:52 +0000] "POST / HTTP/1.1" 302 44 "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:52 [info] ::1 - - [27/Apr/2026:00:53:52 +0000] "GET /html/fail.html HTTP/1.1" 200 1302 "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:52 [info] ::1 - - [27/Apr/2026:00:53:52 +0000] "GET /css/mystyle.css HTTP/1.1" 304 - "http://localhost:12399/html/fail.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:52 [info] ::1 - - [27/Apr/2026:00:53:52 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:55 [info] ::1 - - [27/Apr/2026:00:53:55 +0000] "GET /html/register.html HTTP/1.1" 304 - "http://localhost:12399/html/fail.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:55 [info] ::1 - - [27/Apr/2026:00:53:55 +0000] "GET /css/mystyle.css HTTP/1.1" 304 - "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:55 [info] ::1 - - [27/Apr/2026:00:53:55 +0000] "GET /js/three-bg.js HTTP/1.1" 304 - "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:53:55 [info] ::1 - - [27/Apr/2026:00:53:55 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:54:01 [info] ========= 接收表单数据 ========= 
+2026-04-27 08:54:01 [info] 昵称： 红笺 
+2026-04-27 08:54:01 [info] 学号： 2025120901016 
+2026-04-27 08:54:01 [info] 密码： *** 
+2026-04-27 08:54:01 [info] 登录成功！ 
+2026-04-27 08:54:01 [info] ========= 进入/views/success.ejs ========= 
+2026-04-27 08:54:01 [info] ::1 - - [27/Apr/2026:00:54:01 +0000] "POST / HTTP/1.1" 200 4577 "http://localhost:12399/html/register.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:54:01 [info] ::1 - - [27/Apr/2026:00:54:01 +0000] "GET /css/mystyle.css HTTP/1.1" 304 - "http://localhost:12399/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:54:01 [info] ::1 - - [27/Apr/2026:00:54:01 +0000] "GET /js/firework.js HTTP/1.1" 200 5694 "http://localhost:12399/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 
+2026-04-27 08:54:01 [info] ::1 - - [27/Apr/2026:00:54:01 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" 

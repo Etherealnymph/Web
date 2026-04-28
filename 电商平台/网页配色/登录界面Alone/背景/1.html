@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- 如果希望浏览器即时处理 Less（开发时快速预览），使用 rel="stylesheet/less" 并加载 less.js；
+       生产环境建议把 1.less 编译为 1.css 并使用 rel="stylesheet" 链接编译后的 CSS -->
+  <link rel="stylesheet/less" href="1.less">
+  <script src="https://cdn.jsdelivr.net/npm/less@4.1.3"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="container">
+    <h1>Welcome</h1>
+    
+    <form class="form">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button type="submit" id="login-button">Login</button>
+    </form>
+  </div>
+  
+  <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+<!-- 先加载 jQuery（1.js 使用了 jQuery），然后加载页面脚本 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="1.js"></script>
+</body>
+</html>

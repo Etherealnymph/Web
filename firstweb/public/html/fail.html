@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>登录失败</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/css/mystyle.css">
+        <style>
+            .message { padding: 30px; text-align: center; }
+        </style>
+</head>
+<body>
+
+<script>
+  console.log("========= 登录成功 =========");
+</script>
+
+<div class="container message">
+        <h1 style='color: #e74c3c;'>登录失败！请检查学号和密码。</h1>
+        <p style='margin-top:12px;'>
+                <a href='/html/register.html' style='color:#3498db;text-decoration:none;'>返回登录页面</a>
+        </p>
+        <p style='color:#777;margin-top:10px;'>将在 <span id="count-fail">5</span> 秒后自动返回登录页面...</p>
+</div>
+
+<script>
+    (function(){
+        var seconds = 5;
+        var el = document.getElementById('count-fail');
+        var t = setInterval(function(){
+            seconds--;
+            if (seconds <= 0) { clearInterval(t); window.location.href = '/html/register.html'; }
+            else el.textContent = seconds;
+        }, 1000);
+    })();
+</script>
+
+</body>
+</html>
